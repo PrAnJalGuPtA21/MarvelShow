@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import "./Store.css"
-import { CiSearch } from "react-icons/ci";
+import { IoSearch } from "react-icons/io5";
 const url = 'https://superhero-search.p.rapidapi.com/api/heroes';
 const options = {
   method: 'GET',
@@ -27,7 +27,6 @@ const Store = () => {
   }
 
   useEffect(() => {
-
     fetchbooks(url);
   }, [])
 
@@ -44,9 +43,10 @@ const Store = () => {
   }
   return (
     <div className="store-content">
-      <div className="search">
+      <form className="search">
         <input type="text" className="text" placeholder="Search here" value={search} onChange={(e) => searchItem(e.target.value)} />
-        <button className="button-search"><CiSearch /></button></div>
+        <button className="button-search"><IoSearch /></button>
+      </form>
       <div className="card">
         {
           data.map((item: apidata) => (
@@ -54,8 +54,7 @@ const Store = () => {
               key={item.id}>
               <div className="img-cont" >
                 <img src={item.images.lg} />
-                <span className="card-span">{item.name}</span>
-                <span className="card-span">{item.slug}</span>
+                <span className="card-span" style={{ padding: "15px" }}>{item.name}</span>
               </div>
             </div>
           ))
