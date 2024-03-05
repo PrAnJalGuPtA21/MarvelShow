@@ -32,7 +32,6 @@ const Store = () => {
 
   const searchItem = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e);
-
   }
 
   interface apidata {
