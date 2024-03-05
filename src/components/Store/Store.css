@@ -16,6 +16,19 @@
     text-align: center;
     justify-content: center;
     overflow: hidden;
+    border-radius: 25%;
+
+    
+    background-color: #000000;
+    backdrop-filter: blur(7px);
+    opacity: 1;
+    box-shadow: 0 0 26px #ffffff;
+    outline-style: none;
+    outline-color: #000000;
+    outline-width: 0px;
+    border-radius: 54px;
+  
+  
 }
 
 .card-compo:hover {
@@ -24,18 +37,43 @@
     -webkit-box-shadow: 15px 21px 46px -12px rgba(0, 0, 0, 0.36);
     -moz-box-shadow: 15px 21px 46px -12px rgba(0, 0, 0, 0.36);
     box-shadow: 15px 21px 46px -12px rgba(0, 0, 0, 0.36);
+
 }
+
 
 .img-cont {
     display: flex;
     flex-direction: column;
     justify-content: start;
     width: 100%;
-    font-size: 30px;
-    
+    font-size: 25px;
+    position: relative;
+    color: white;
+}
+
+.img-cont:hover{
+    transform: scale(1.2);
+    transition: 2s;
 }
 
 .img-cont>img {
     object-fit: contain;
     float: inline-start;
+}
+
+.text{
+    width: 500px;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    text-align: center;
+margin-left: 33%;
+margin-top: 30px;
+font-size: medium;
+position: relative;
+}
+
+.button-search{
+    position: absolute;
 }

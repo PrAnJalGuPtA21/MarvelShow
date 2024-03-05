@@ -9,6 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 7px 17px -5px rgba(252,252,252,0.75);
+-webkit-box-shadow: 2px 7px 17px -5px rgba(252,252,252,0.75);
+-moz-box-shadow: 2px 7px 17px -5px rgba(252,252,252,0.75);
 }
 .list-item{
     display: flex;

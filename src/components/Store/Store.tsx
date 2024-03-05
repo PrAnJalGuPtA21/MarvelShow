@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import "./Store.css"
+import { CiSearch } from "react-icons/ci";
 const url = 'https://superhero-search.p.rapidapi.com/api/heroes';
 const options = {
   method: 'GET',
@@ -32,6 +33,7 @@ const Store = () => {
 
   const searchItem = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e);
+
   }
 
   interface apidata {
@@ -41,8 +43,10 @@ const Store = () => {
     images: undefined
   }
   return (
-    <div className="store=-content">
-      <input type="text" className="text" value={search} onChange={(e) => searchItem(e.target.value)} />
+    <div className="store-content">
+      <div className="search">
+        <input type="text" className="text" placeholder="Search here" value={search} onChange={(e) => searchItem(e.target.value)} />
+        <button className="button-search"><CiSearch /></button></div>
       <div className="card">
         {
           data.map((item: apidata) => (
@@ -50,11 +54,10 @@ const Store = () => {
               key={item.id}>
               <div className="img-cont" >
                 <img src={item.images.lg} />
-                <span>{item.name}</span>
-                <span>{item.slug}</span>
+                <span className="card-span">{item.name}</span>
+                <span className="card-span">{item.slug}</span>
               </div>
             </div>
-
           ))
         }
       </div>
