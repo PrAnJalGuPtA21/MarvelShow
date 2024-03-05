@@ -44,7 +44,7 @@ const Store = () => {
   );
 
   return (
-    <div className="store-content">
+    <>
       <form className="search">
         <input
           type="text"
@@ -69,7 +69,7 @@ const Store = () => {
           </div>
         ))}
       </div>
-    </div>
+      </>
   );
 };
 
