@@ -22,7 +22,7 @@ interface Hero {
 const Store = () => {
   const [data, setData] = useState<Hero[]>([]);
   const [search, setSearch] = useState<string>('');
-  const [loading , setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +36,7 @@ const Store = () => {
         setLoading(false)
       }
     };
-    fetchData();
+    // fetchData();
   }, []);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,20 +46,20 @@ const Store = () => {
   const filteredData = data.filter((hero) =>
     hero.name.toLowerCase().includes(search.toLowerCase())
   );
-if(loading){
-  return(
-    <div className="loader-y">
-      <DNA
-    visible={true}
-    height="80"
-    width="80"
-    ariaLabel="dna-loading"
-    wrapperStyle={{}}
-    wrapperClass="dna-wrapper"
-    />
-    </div>
-  )
-}
+  // if (loading) {
+  //   return (
+  //     <div className="loader-y">
+  //       <DNA
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         ariaLabel="dna-loading"
+  //         wrapperStyle={{}}
+  //         wrapperClass="dna-wrapper"
+  //       />
+  //     </div>
+  //   )
+  // }
   return (
     <>
       <form className="search">
@@ -74,7 +74,7 @@ if(loading){
           <IoSearch />
         </button>
       </form>
-      <div className="card">
+      {/* <div className="card">
         {filteredData.map((hero) => (
           <div className="card-compo" key={hero.id}>
             <div className="img-cont">
@@ -85,8 +85,20 @@ if(loading){
             </div>
           </div>
         ))}
+      </div> */}
+      <div className="flip-card">
+        {filteredData.map((hero) => (
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img src="" alt="Avatar" style={{ width: "300px", height: "300px" }} />
+            </div>
+            <div className="flip-card-back">
+              <h1>hey</h1>
+            </div>
+          </div>
+        ))}
       </div>
-      </>
+    </>
   );
 };
 
