@@ -16,10 +16,6 @@ const Navbar = () => {
                     <NavLink to="store" className="linki">
                         Store</NavLink>
                 </li>
-                <li>
-                    <NavLink to="contact" className="linki">
-                        Contact Us</NavLink>
-                </li>
             </ul>
         </div>
     )

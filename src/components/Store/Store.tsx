@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IoSearch } from 'react-icons/io5';
+import { DNA } from 'react-loader-spinner'
 import './Store.css';
 
 const url = 'https://superhero-search.p.rapidapi.com/api/heroes';
@@ -21,6 +22,7 @@ interface Hero {
 const Store = () => {
   const [data, setData] = useState<Hero[]>([]);
   const [search, setSearch] = useState<string>('');
+  const [loading , setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,8 +30,10 @@ const Store = () => {
         const response = await fetch(url, options);
         const result = await response.json();
         setData(result);
+        setLoading(false);
       } catch (error) {
         console.error(error);
+        setLoading(false)
       }
     };
     fetchData();
@@ -42,7 +46,20 @@ const Store = () => {
   const filteredData = data.filter((hero) =>
     hero.name.toLowerCase().includes(search.toLowerCase())
   );
-
+if(loading){
+  return(
+    <div className="loader-y">
+      <DNA
+    visible={true}
+    height="80"
+    width="80"
+    ariaLabel="dna-loading"
+    wrapperStyle={{}}
+    wrapperClass="dna-wrapper"
+    />
+    </div>
+  )
+}
   return (
     <>
       <form className="search">

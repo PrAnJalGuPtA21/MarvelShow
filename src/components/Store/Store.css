@@ -63,8 +63,8 @@
 
 .search {
     display: flex;
-    position: relative;
     flex-direction: row;
+    position: relative;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
@@ -81,16 +81,21 @@
 
 .button-search {
     position: absolute;
-    right: 32%;
     width: 50px;
     height: 50px;
     margin: 12px;
     border-radius: 50px;
-    right: 0;
+    right: 390px;
     border: none;
     font-size: 15px;
     font-weight: bolder;
     border: 2px solid black;
+}
+.loader-y{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 240px;
 }
 
 .button-search:hover {
